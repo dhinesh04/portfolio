@@ -1,32 +1,40 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
-import Navbar from "./components/Navbar";
+import Projects from "./sections/Projects";
 import Footer from "./components/Footer";
 import "./App.css";
 import { useState } from "react";
+import { FaGithub, FaMedium } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import ProfExperience from "./sections/ProfExperience";
+import Skills from "./sections/Skills";
+import Education from "./sections/Education";
+import ResearchExperience from "./sections/ResearchExperience";
 
 function App(){
-    const [activeTab, setActiveTab] = useState("home");
 
      return(
         <Router>
-            {/* <Navbar setActiveTab={setActiveTab}/> */}
+            <div className="container">
             <header>
-                <h1>Welcome to my portfolio!</h1>
-            </header>
-            <div className="tabs">
-                <button onClick={() => setActiveTab("home")}>Home</button>
-                <button onClick={() => setActiveTab("about")}>About</button>
-                <button onClick={() => setActiveTab("projects")}>Projects</button>
-                <button onClick={() => setActiveTab("contact")}>Contact</button>
+                <h2>Dhinesh Sivakumar</h2>
+                <p className="contact-info">
+                    <span><FaLocationDot/>&nbsp; Columbus, OH</span>
+                    <span><MdEmail/>&nbsp; dhineshkumar4645@gmail.com</span>
+                    <span><FaPhoneAlt/>&nbsp;+1-614-554-9749</span>
+                    <span><SiLeetcode/>&nbsp;<a href="https://leetcode.com/u/dhineshkumar4645/">LeetCode</a></span>
+                    <span><FaGithub/>&nbsp;<a href="https://github.com/dhinesh04">Github</a></span>
+                    <span><FaMedium/>&nbsp;<a href="https://medium.com/@dhinesh_kumar">Medium</a></span>
+                </p>   
+                </header> 
+            <Skills/>
+            <ProfExperience/>
+            <ResearchExperience/>
+            <Projects/>
+            <Education/>
             </div>
-            {activeTab === "home" && <Home />}
-            {activeTab === "about" && <About />}
-            {activeTab === "projects" && <Projects />}
-            {activeTab === "contact" && <Contact />}
             <Footer/>
         </Router>
     );
