@@ -45,15 +45,29 @@ body {
 }
 
 /* — LEFT: TABLE OF CONTENTS — */
+/* — LEFT: TABLE OF CONTENTS — */
 .wiki-toc {
   position: sticky;
   top: 1rem;
   align-self: flex-start;
   height: fit-content;
-  padding-left: 0; /* ✅ removed left padding */
-  border-left: none; /* ✅ removed divider line */
+  max-height: calc(100vh - 2rem); /* keep within viewport height */
+  overflow-y: auto;               /* scroll inside if too tall */
+  scrollbar-width: thin;
+  scrollbar-color: #a2a9b1 transparent;
+  padding-left: 0;
+  border-left: none;
   box-sizing: border-box;
+  background-color: #fff;         /* prevent text overlap on scroll */
+  z-index: 2;                     /* stay above main content */
 }
+
+/* Optional — gives it same subtle background as Appearance panel */
+body.dark-mode .wiki-toc {
+  background: #2d2f31;
+  border-right: 1px solid #404244;
+}
+
 
 .wiki-toc {
   width: 220px;
@@ -70,6 +84,62 @@ body {
   border-bottom: 1px solid #a2a9b1;
   font-weight: 600;
 }
+/* === CONTENTS HEADER — Wikipedia-style === */
+.contents-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.contents-header strong {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.contents-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* (Top) link */
+.contents-top {
+  color: #0645ad;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding-right: 0.2rem;
+}
+.contents-top:hover {
+  text-decoration: underline;
+}
+
+/* [hide]/[show] button */
+.contents-hide-btn {
+  font-size: 0.75rem;
+  background: #f8f9fa;
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+  padding: 0 4px;
+  cursor: pointer;
+  color: #202122;
+}
+.contents-hide-btn:hover {
+  background: #f1f1f1;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .contents-hide-btn {
+  background: #2d2f31;
+  border-color: #555;
+  color: #f8f9fa;
+}
+body.dark-mode .contents-hide-btn:hover {
+  background: #3a3b3d;
+}
+
 .contents-box ul {
   list-style: none;
   margin: 0;
@@ -81,6 +151,85 @@ body {
 .toc-level-1 { padding-left: 0; }
 .toc-level-2 { padding-left: 1rem; font-size: 0.92em; }
 .toc-level-3 { padding-left: 1.5rem; font-size: 0.88em; }
+
+/* === COLLAPSIBLE TOC — Wikipedia-accurate layout === */
+.toc-item {
+  position: relative;
+  margin: 0.25rem 0;
+}
+
+.toc-line {
+  display: flex;
+  align-items: center;
+  line-height: 1.3;
+  position: relative;
+  padding-left: 0.9rem; /* leave room for the arrow */
+}
+
+/* ▼ Small chevron toggle */
+.toc-toggle {
+  position: absolute;
+  left: 0;               /* places the arrow outside text block */
+  top: 0.1rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.7rem;
+  color: #202122;
+  transform: rotate(0deg);
+  transition: transform 0.15s ease-in-out;
+  opacity: 0.8;
+}
+
+.toc-toggle.open {
+  transform: rotate(90deg);
+}
+
+.toc-toggle:hover {
+  opacity: 1;
+}
+
+/* Links */
+.toc-link {
+  color: #0645ad;
+  text-decoration: none;
+  line-height: 1.35;
+}
+
+.toc-link:hover {
+  text-decoration: underline;
+}
+/* === TRUE WIKIPEDIA-STYLE INDENTATION === */
+.toc-level-1 {
+  margin: 0;
+  padding-left: 0;
+}
+
+.toc-level-2 {
+  margin: 0;
+  padding-left: 1.3rem;  /* indentation for 2nd-level items */
+  font-size: 0.92em;
+  border-left: none;
+}
+
+.toc-level-3 {
+  margin: 0;
+  padding-left: 2.3rem;  /* deeper indentation */
+  font-size: 0.88em;
+}
+
+/* Ensure nested lists sit under parent line */
+.toc-item ul {
+  margin-top: 0.25rem;
+  margin-left: 0.75rem;  /* pushes subsections inward */
+  border-left: none;
+}
+
+/* Dark mode consistency */
+body.dark-mode .toc-toggle {
+  color: #f8f9fa;
+}
+
+
 
 /* — CENTER: ARTICLE — */
 .wiki-body {
@@ -183,6 +332,50 @@ body {
 .edu-sub   { color: #444; font-size: 0.95rem; margin: 0.2rem 0 0.4rem; }
 ul { margin-top: 0.3rem; padding-left: 1.2rem; }
 li { margin-bottom: 0.4rem; }
+
+/* === EXPERIENCE & PROJECT BULLET POINTS === */
+.experience-section ul,
+.project-section ul {
+  list-style-type: disc;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+  margin-left: 1.5rem;  /* indent bullets */
+  padding-left: 0;
+}
+
+.experience-section li,
+.project-section li {
+  margin-bottom: 0.35rem;
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+.project-entry ul,
+.experience-entry ul {
+  list-style-position: outside;
+}
+
+.project-entry li::marker,
+.experience-entry li::marker {
+  color: #202122; /* classic Wikipedia dark gray bullet */
+}
+body.dark-mode .project-entry li::marker,
+body.dark-mode .experience-entry li::marker {
+  color: #f8f9fa;
+}
+
+
+.project-subsection {
+  margin-top: 1.5rem;
+}
+
+.project-subsection h3 {
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
 
 /* — RIGHT: APPEARANCE PANEL — */
 .wiki-appearance {

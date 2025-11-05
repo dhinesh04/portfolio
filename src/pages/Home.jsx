@@ -5,9 +5,10 @@ export default function Home() {
     <article className="wiki-content">
       {Data.sections.map((section, index) => (
         <section key={section.id} id={section.id} className="wiki-section">
-          {/* Skip heading for the first section */}
-          { <h2>{section.title}</h2>}
+          {/* Section title */}
+          {<h2>{section.title}</h2>}
 
+          {/* Paragraph sections (like Introduction) */}
           {section.paragraphs &&
             section.paragraphs.map((p, i) => (
               <p key={i} className={index === 0 ? "lead" : ""}>
@@ -32,7 +33,7 @@ export default function Home() {
             </div>
           )}
 
-          {/* Work Experience */}
+          {/* Professional or Research Experience */}
           {section.experiences && (
             <div className="experience-section">
               {section.experiences.map((exp, i) => (
@@ -54,28 +55,39 @@ export default function Home() {
             </div>
           )}
 
-          {/* Projects */}
-          {section.projects && (
+          {/* Projects section — supports subsections (ML/AI & Full Stack) */}
+          {section.id === "projects" && section.subsections && (
             <div className="project-section">
-              {section.projects.map((proj, i) => (
-                <div key={i} className="project-entry">
-                  <div className="project-header">
-                    <h3>{proj.name}</h3>
-                    <span className="project-date">{proj.date}</span>
-                  </div>
-                  <ul>
-                    {proj.points.map((p, j) => (
-                      <li key={j}>{p}</li>
+              {section.subsections.map((sub, i) => (
+                <div key={sub.id} id={sub.id} className="project-subsection">
+                  <h3>{sub.title}</h3>
+
+                  {sub.projects &&
+                    sub.projects.map((proj, j) => (
+                      <div key={j} className="project-entry">
+                        <div className="project-header">
+                          <h4>{proj.name}</h4>
+                          <span className="project-date">{proj.date}</span>
+                        </div>
+                        {proj.organization && (
+                          <p className="project-org">{proj.organization}</p>
+                        )}
+                        <ul>
+                          {proj.points.map((p, k) => (
+                            <li key={k}>{p}</li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
                 </div>
               ))}
             </div>
           )}
 
-          {/* Generic bullet lists */}
+          {/* Skills or generic list */}
           {section.list &&
             !section.list[0]?.degree &&
+            section.id !== "projects" &&
             section.list.map((item, i) => <p key={i}>• {item}</p>)}
         </section>
       ))}

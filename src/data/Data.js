@@ -74,33 +74,52 @@ const Data = {
         },
       ],
     },
-    {
+   {
       id: "projects",
       title: "Projects",
-      projects: [
+      subsections: [
         {
-          name: "OSU Accessible Parking Tracker",
-          date: "Oct 2025",
-          organization: "The Ohio State University",
-          points: [
-                "Built a full-stack web app during HACKOH/IO 2025 hackathon to monitor accessible parking across Ohio State’sgarages/lots, featuring an interactive Google Map and dynamic table with real-time status badges",
-                "Implemented a computer-vision endpoint using OpenCV to detect disability indicators from license plates,automatically updating occupancy counts in the database and reflecting live changes in the UI."],
+          id: "ml-ai-projects",
+          title: "ML/AI Projects",
+          projects: [
+            {
+              name: "Early Detection of Depression via Reddit Posts",
+              date: "Apr 2025",
+              points: [
+                "Implemented an end-to-end pipeline for eRisk 2025 (Task 2): parsed and prepared data from different cohorts, and ran linguistic analyses (TF-IDF, log-odds) to characterize depressed individuals.",
+                "Benchmarked transformer-based models to define performance baselines for early depression detection."
+              ],
+            },
+          ],
         },
         {
-          name: "Early Detection of Depression via Reddit Posts",
-          date: "Apr 2025",
-          points: [
-                "Implemented an end-to-end pipeline for eRisk 2025 (Task 2): parsed and prepared data from different cohorts, and ran linguistic analyses (TF-IDF, log-odds) to characterize depressed individuals.",
-                "Benchmarked transformer-based models to define performance baselines for early depression detection."],
-        }
+          id: "fullstack-projects",
+          title: "Full Stack Projects",
+          projects: [
+            {
+              name: "OSU Accessible Parking Tracker",
+              date: "Oct 2025",
+              points: [
+                "Built a full-stack web app during HACKOH/IO 2025 hackathon to monitor accessible parking across Ohio State’s garages/lots, featuring an interactive Google Map and dynamic table with real-time status badges",
+                "Implemented a computer-vision endpoint using OpenCV to detect disability indicators from license plates, automatically updating occupancy counts in the database and reflecting live changes in the UI."
+              ],
+            },
+          ],
+        },
       ],
     },
+
+
     {
       id: "skills",
       title: "Skills & Certifications",
       list: [
-        "Docker and Kubernetes",
-        "Python, React, TensorFlow, SQL, JavaScript",
+        "Programming Languages: Python, JavaScript, Go",
+        "Web: React, TypeScript, Flask, FastAPI",
+        "ML/Data Science: PyTorch, Transformers, scikit-learn, NumPy, Pandas, OpenCV",
+        "Databases: MySQL, ArangoDB, MongoDB, PostgreSQL",
+        "DevOps:, Git, Docker, Kubernetes, GCP, AWS",
+        "Other: Linux, Bash, Jupyter"
       ],
     },
   ],
@@ -113,7 +132,7 @@ const Data = {
     linkedin: "https://www.linkedin.com/in/dhinesh-sivakumar/",
     github: "https://github.com/dhinesh04",
     medium: "https://medium.com/@dhinesh_sivakumar",
-    availability: "Part-time / Full-time from May 2026",
+    availability: "Part-time immediately / Full-time from May 2026",
   },
 
   lastEdited: "November 1, 2025",
