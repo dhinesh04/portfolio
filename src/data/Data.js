@@ -1,141 +1,118 @@
-import profileImage from "../assets/image.jpeg";
+export const NAV_ITEMS = ["Experience", "Research", "Projects", "Skills", "Contact"];
 
-const Data = {
-  title: "Dhinesh Sivakumar",
-  subtitle: "Welcome to my Wikipedia inspired portfolio",
-
-  sections: [
-    {
-      id: "intro",
-      title: "Introduction",
-      paragraphs: [
-        `A graduate student at The Ohio State University specializing in Computer Science and Engineering. My research focuses on applying machine learning techniques to healthcare data, particularly in developing predictive models for patient outcomes. I'm passionate about leveraging technology to solve real-world problems and improve lives.`,
-        ``,
-      ],
-    },
-    {
-      id: "education",
-      title: "Education",
-      list: [
-        {
-          degree: "MS in Computer Science and Engineering",
-          institution: "The Ohio State University",
-          location: "Columbus, Ohio",
-          duration: "2024 – Spring 2026 (Expected)",
-        },
-        {
-          degree: "MSc (5 year integrated) in Decision and Computing Sciences",
-          institution: "Coimbatore Institute of Technology",
-          location: "Coimbatore, India",
-          duration: "2019 – 2024",
-        },
-      ],
-    },
-    {
-      id: "experience",
-      title: "Professional Experience",
-      experiences: [
-        {
-          role: "AI Automation Engineer Summer Intern",
-          organization: "Everworker (formerly Integrail)",
-          location: "Greenwich, CT (Remote)",
-          date: "May 2025 – Aug 2025",
-          points: [
-            "Designed AI agents to automate the employee onboarding process, improving operational eﬃciency and reducing manual workload.",
-            "Integrated Microsoft Graph API to streamline user provisioning and resource allocation workflows.",
-          ],
-        },
-         {
-          role: "Software Engineer Intern",
-          organization: "Nference Inc",
-          location: "Coimbatore, India",
-          date: "Jul 2022 – Jun 2024",
-          points: [
-            "Created failure statistics pipelines for healthcare knowledge graph, improving data integrity",
-            "Maintained and optimized Kubernetes-based crawling infrastructure for biomedical datasets.",
-            "Integrated cellXgene (single-cell omics repository) into the NferX platform to enhance research capabilities",
-            "Automated a De-Identification (De-ID) pipeline for PHI data in academic medical centers, contributing to HIPAA-compliant workflows on the Nsights platform"
-          ],
-        },
-      ],
-    },
-     {
-      id: "experience",
-      title: "Research Experience",
-      experiences: [
-        {
-          role: "Student Researcher - Dept. of Computer Science and Engineering",
-          organization: "The Ohio State University",
-          location: "Columbus, OH",
-          date: "Feb 2025 – Present",
-          points: [
-            "Developing graph-neural survival models for glioblastoma by fusing multi-omics (RNA-seq, CNV, methylation) into a patient-similarity graph; benchmarking early/late/attention fusion strategies against Cox/RSF baselines.",
-          ],
-        },
-      ],
-    },
-   {
-      id: "projects",
-      title: "Projects",
-      subsections: [
-        {
-          id: "ml-ai-projects",
-          title: "ML/AI Projects",
-          projects: [
-            {
-              name: "Early Detection of Depression via Reddit Posts",
-              date: "Apr 2025",
-              points: [
-                "Implemented an end-to-end pipeline for eRisk 2025 (Task 2): parsed and prepared data from different cohorts, and ran linguistic analyses (TF-IDF, log-odds) to characterize depressed individuals.",
-                "Benchmarked transformer-based models to define performance baselines for early depression detection."
-              ],
-            },
-          ],
-        },
-        {
-          id: "fullstack-projects",
-          title: "Full Stack Projects",
-          projects: [
-            {
-              name: "OSU Accessible Parking Tracker",
-              date: "Oct 2025",
-              points: [
-                "Built a full-stack web app during HACKOH/IO 2025 hackathon to monitor accessible parking across Ohio State’s garages/lots, featuring an interactive Google Map and dynamic table with real-time status badges",
-                "Implemented a computer-vision endpoint using OpenCV to detect disability indicators from license plates, automatically updating occupancy counts in the database and reflecting live changes in the UI."
-              ],
-            },
-          ],
-        },
-      ],
-    },
-
-
-    {
-      id: "skills",
-      title: "Skills & Certifications",
-      list: [
-        "Programming Languages: Python, JavaScript, Go",
-        "Web: React, TypeScript, Flask, FastAPI",
-        "ML/Data Science: PyTorch, Transformers, scikit-learn, NumPy, Pandas, OpenCV",
-        "Databases: MySQL, ArangoDB, MongoDB, PostgreSQL",
-        "DevOps:, Git, Docker, Kubernetes, GCP, AWS",
-        "Other: Linux, Bash, Jupyter"
-      ],
-    },
-  ],
-
-  infobox: {
-    name: "Dhinesh Sivakumar",
-    image: profileImage,
-    location: "Columbus, Ohio",
-    email: "dhineshkumar4645@gmail.com",
-    linkedin: "https://www.linkedin.com/in/dhinesh-sivakumar/",
-    github: "https://github.com/dhinesh04",
-    medium: "https://medium.com/@dhinesh_sivakumar",
-    availability: "Part-time immediately / Full-time from May 2026",
+export const EDUCATION = [
+  {
+    school: "The Ohio State University",
+    degree: "M.S. Computer Science & Engineering",
+    period: "Aug 2024 – May 2026",
+    gpa: "3.62 / 4.0",
   },
+  {
+    school: "Coimbatore Institute of Technology",
+    degree: "M.Sc. Decision & Computing Sciences (5-yr)",
+    period: "Jul 2019 – May 2024",
+    gpa: "3.55 / 4.0",
+  },
+];
 
-  lastEdited: "November 1, 2025",
-};
+export const EXPERIENCE = [
+  {
+    company: "EverWorker",
+    location: "Greenwich, CT (Remote)",
+    role: "AI Automation Engineer — Summer Intern",
+    period: "May – Aug 2025",
+    bullets: [
+      "Automated employee onboarding with AI agents, cutting cycle time from 2 hours to ~10 minutes (90% faster), saving several hours/week.",
+      "Integrated Microsoft Graph API to automate enterprise provisioning with OAuth2 auth and structured logging for production reliability.",
+    ],
+    tags: ["AI Agents", "Microsoft Graph API", "OAuth2", "Python"],
+  },
+  {
+    company: "Nference Inc",
+    location: "Coimbatore, India",
+    role: "Software Engineer Intern (Co-op)",
+    period: "Jul 2022 – Jun 2024",
+    bullets: [
+      "Improved reliability of a medical knowledge graph by implementing 7+ automated failure statistics across medical DBs.",
+      "Primary engineer for Kubernetes crawling infrastructure — delivered ingestion pipeline for cellxgene (~250 studies) in the NferX platform.",
+      "Automated PHI de-identification for NSights via GCP-based execution across academic medical centres.",
+    ],
+    tags: ["Kubernetes", "GCP", "Python", "Knowledge Graphs"],
+  },
+];
 
-export default Data;
+export const RESEARCH = [
+  {
+    org: "The Ohio State University",
+    dept: "Dept. of Computer Science & Engineering",
+    role: "M.S. Project Researcher",
+    period: "Feb 2025 – Present",
+    bullets: [
+      "Developing a dual-head Graph Convolutional Network integrating four multi-omics modalities (CNA, mRNA, DNA methylation, clinical) via mRMR feature selection and survival-aware Similarity Network Fusion.",
+      "Achieved AUC = 0.83 and C-index = 0.74 for glioblastoma survival prediction, outperforming all baselines — with direct implications for personalised treatment planning in oncology.",
+    ],
+    tags: ["GCN", "Multi-omics", "PyTorch", "Survival Analysis", "Healthcare AI"],
+  },
+];
+
+export const PROJECTS = [
+  {
+    name: "Portfolio Website",
+    period: "Mar 2026",
+    desc: "Designed a Portfolio website using React",
+    tags: ["React"],
+    link: "https://github.com/dhinesh04/portfolio",
+  },
+  {
+    name: "OSU Accessible Parking Tracker",
+    period: "Oct 2025",
+    desc: "Full-stack accessible-parking tracker built under a 24-hour hackathon sprint. React + Google Maps UI with live backend polling every 10 seconds. FastAPI + Supabase backend with an OpenCV/OCR pipeline to detect parking indicators from images.",
+    tags: ["React", "FastAPI", "Supabase", "OpenCV", "Google Maps API"],
+    link: "https://github.com/dhinesh04/accessiblity-parking-availability",
+  },
+  {
+    name: "Early Detection of Depression via Reddit Posts",
+    period: "Apr 2025",
+    desc: "Linguistic feature analysis for eRisk 2025 Task 2 using TF-IDF & log-odds ratios. Benchmarked BERT, DeBERTa, PubMedBERT, and Longformer — Longformer achieved ~95.08% recall for depressed users.",
+    tags: ["PyTorch", "Transformers", "NLP", "Longformer", "eRisk 2025"],
+    link: "https://github.com/dhinesh04/early-depression-detection",
+  },
+  
+  // Add more projects here:
+  // {
+  //   name: "Your Project",
+  //   period: "2025",
+  //   desc: "Description.",
+  //   tags: ["Tag1", "Tag2"],
+  //   link: "#",
+  // },
+];
+
+export const SKILLS = [
+  { group: "Languages",        items: ["Python", "C++", "JavaScript", "Go", "SQL", "Bash"] },
+  { group: "Web & Frameworks", items: ["React", "TypeScript", "FastAPI", "Node.js", "Flask", "Django"] },
+  { group: "ML / AI",          items: ["PyTorch", "Transformers", "scikit-learn", "NumPy", "Pandas", "OpenCV"] },
+  { group: "Databases",        items: ["PostgreSQL", "MongoDB", "MySQL", "Supabase", "ArangoDB"] },
+  { group: "DevOps & Cloud",   items: ["Docker", "Kubernetes", "GCP", "AWS", "Git", "GitHub Actions"] },
+];
+
+export const CONTACT_LINKS = [
+  { label: "Email",    value: "dhineshkumar4645@gmail.com",        href: "mailto:dhineshkumar4645@gmail.com" },
+  { label: "LinkedIn", value: "linkedin.com/in/dhinesh-sivakumar", href: "https://linkedin.com/in/dhinesh-sivakumar" },
+  { label: "Medium",   value: "medium.com/@dhinesh_sivakumar",     href: "https://medium.com/@dhinesh_sivakumar" },
+  { label: "Location", value: "Columbus, OH",                      href: null },
+];
+
+export const QUICK_LINKS = [
+  { label: "Download Resume", href: "https://drive.google.com/file/d/19rkXeZvQUAqvDaPhMqi7cLLv6nb2n-cv/view?usp=sharing" },
+  { label: "GitHub Profile",  href: "https://github.com/dhinesh04" },
+  { label: "LinkedIn",        href: "https://linkedin.com/in/dhinesh-sivakumar" },
+  { label: "Medium Blog",     href: "https://medium.com/@dhinesh_sivakumar" },
+];
+
+export const FOOTER_LINKS = [
+  { label: "GitHub",   href: "https://github.com/dhinesh04" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/dhinesh-sivakumar" },
+  { label: "Medium",   href: "https://medium.com/@dhinesh_sivakumar" },
+  { label: "Email",    href: "mailto:dhineshkumar4645@gmail.com" },
+];

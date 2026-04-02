@@ -1,24 +1,19 @@
+import { useActiveSection } from "./hooks/usePortfolio";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import InfoBox from "./components/InfoBox";
-import ContentsSidebar from "./components/ContentsSidebar";
 import Home from "./pages/Home";
-import AppearanceBox from "./components/AppearanceBox";
-import "./styles/wiki.css";
+import "./styles/portfolio.css";
+
+const SECTION_IDS = ["experience", "research", "projects", "skills", "contact"];
 
 export default function App() {
+  const active = useActiveSection(SECTION_IDS);
+
   return (
-    <div className="wiki-page">
-      <Header />
-      <div className="wiki-layout">
-        <ContentsSidebar />
-        <main className="wiki-body">
-          <InfoBox />
-          <Home />
-        </main>
-        <AppearanceBox />
-      </div>
+    <>
+      <Header active={active} />
+      <Home />
       <Footer />
-    </div>
+    </>
   );
 }
