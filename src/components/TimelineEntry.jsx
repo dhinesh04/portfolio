@@ -10,8 +10,9 @@ import { Tag } from "./SectionTitle";
  *  role     – italic role title
  *  bullets  – string[]
  *  tags     – string[]
+ *  link     – optional URL (e.g. GitHub repo) shown as a button
  */
-export default function TimelineEntry({ period, title, subtitle, role, bullets, tags }) {
+export default function TimelineEntry({ period, title, subtitle, role, bullets, tags, link }) {
   return (
     <div className="timeline-grid">
       {/* Left column */}
@@ -29,10 +30,31 @@ export default function TimelineEntry({ period, title, subtitle, role, bullets, 
             <li key={i}>{b}</li>
           ))}
         </ul>
-        <div className="tags-row">
-          {tags.map((t) => (
-            <Tag key={t}>{t}</Tag>
-          ))}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.75rem" }}>
+          <div className="tags-row">
+            {tags.map((t) => (
+              <Tag key={t}>{t}</Tag>
+            ))}
+          </div>
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.1em",
+                textTransform: "uppercase", textDecoration: "none",
+                color: "var(--accent)", border: "1px solid rgba(13,148,136,0.35)",
+                background: "var(--accent-bg)", padding: "0.35rem 0.9rem",
+                borderRadius: 4, whiteSpace: "nowrap",
+                transition: "background 0.2s, border-color 0.2s",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(13,148,136,0.15)"; e.currentTarget.style.borderColor = "var(--accent)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "var(--accent-bg)"; e.currentTarget.style.borderColor = "rgba(13,148,136,0.35)"; }}
+            >
+              View code ↗
+            </a>
+          )}
         </div>
       </div>
     </div>

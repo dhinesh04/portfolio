@@ -212,11 +212,11 @@ function Research() {
   return (
     <section id="research" style={{ padding: "6rem 0", borderBottom: "1px solid var(--rule)" }}>
       <div className="section-inner">
-        <SectionTitle label="02 — Research Experience" title="What I'm studying." />
+        <SectionTitle label="02 — Research Experience" title="What I'm studying and researching." />
         <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
           {RESEARCH.map((r, i) => (
             <Reveal key={r.org} delay={i * 100}>
-              <TimelineEntry period={r.period} title={r.org} subtitle={r.dept} role={r.role} bullets={r.bullets} tags={r.tags} />
+              <TimelineEntry period={r.period} title={r.org} subtitle={r.dept} role={r.role} bullets={r.bullets} tags={r.tags} link={r.link} />
             </Reveal>
           ))}
         </div>

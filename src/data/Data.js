@@ -52,6 +52,7 @@ export const RESEARCH = [
       "Achieved AUC = 0.83 and C-index = 0.74 for glioblastoma survival prediction, outperforming all baselines — with direct implications for personalised treatment planning in oncology.",
     ],
     tags: ["GCN", "Multi-omics", "PyTorch", "Survival Analysis", "Healthcare AI"],
+    link: "https://github.com/dhinesh04/gbm-survival-prediction"
   },
 ];
 
