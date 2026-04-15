@@ -125,7 +125,7 @@ function Profile() {
           {/* ── Text ── */}
           <div style={{ flex: 1, minWidth: 280, maxWidth: 620 }}>
             <div style={{ fontFamily: "var(--mono)", fontSize: "0.72rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "1.2rem", ...anim("0.15s") }}>
-              M.S. CSE · The Ohio State University · Graduating May 2026
+              M.S. CSE · The Ohio State University · Graduating Aug 2026
             </div>
 
             <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(2.4rem, 6vw, 4.8rem)", fontWeight: 500, lineHeight: 1.08, letterSpacing: "-0.03em", color: "var(--ink)", marginBottom: "1.5rem", ...anim("0.25s") }}>
@@ -135,7 +135,7 @@ function Profile() {
             <p style={{ fontSize: "1.08rem", color: "var(--muted)", lineHeight: 1.85, maxWidth: 560, marginBottom: "2.5rem", ...anim("0.4s") }}>
               Software engineer with professional internship experiences in AI automation and large-scale data systems.
               Passionate about the healthcare sector — applying machine learning to real clinical problems.
-              Graduating from OSU in May 2026 and actively seeking full-time opportunities.
+              Graduating from OSU in August 2026 and actively seeking full-time opportunities.
             </p>
 
             {/* Education cards — now using EducationCard component */}
@@ -339,7 +339,7 @@ function Contact() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
           <Reveal>
             <p style={{ fontSize: "1.05rem", color: "var(--muted)", lineHeight: 1.85, marginBottom: "2rem" }}>
-              Graduating in May 2026 and actively looking for full-time software engineering roles —
+              Graduating in August 2026 and actively looking for full-time software engineering roles —
               especially in healthcare technology, AI/ML, or full-stack product engineering.
               Open to research collaborations too.
             </p>

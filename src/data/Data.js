@@ -4,7 +4,7 @@ export const EDUCATION = [
   {
     school: "The Ohio State University",
     degree: "M.S. Computer Science & Engineering",
-    period: "Aug 2024 – May 2026",
+    period: "Aug 2024 – Aug 2026",
     gpa: "3.62 / 4.0",
   },
   {
