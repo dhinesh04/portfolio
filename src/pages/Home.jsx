@@ -212,11 +212,11 @@ function Research() {
   return (
     <section id="research" style={{ padding: "6rem 0", borderBottom: "1px solid var(--rule)" }}>
       <div className="section-inner">
-        <SectionTitle label="02 — Research Experience" title="What I'm studying." />
+        <SectionTitle label="02 — Research Experience" title="What I'm studying and researching." />
         <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
           {RESEARCH.map((r, i) => (
             <Reveal key={r.org} delay={i * 100}>
-              <TimelineEntry period={r.period} title={r.org} subtitle={r.dept} role={r.role} bullets={r.bullets} tags={r.tags} />
+              <TimelineEntry period={r.period} title={r.org} subtitle={r.dept} role={r.role} bullets={r.bullets} tags={r.tags} link={r.link} />
             </Reveal>
           ))}
         </div>
@@ -226,23 +226,43 @@ function Research() {
 }
 
 // ── Projects ──────────────────────────────────────────────────────────────────
+const CATEGORIES = ["All", "Full-Stack", "AI/ML"];
+
 function Projects() {
+  const [activeTab, setActiveTab] = useState("All");
+  const filtered = activeTab === "All" ? PROJECTS : PROJECTS.filter(p => p.category === activeTab);
+
   return (
     <section id="projects" style={{ padding: "6rem 0", borderBottom: "1px solid var(--rule)", background: "var(--surface)" }}>
       <div className="section-inner">
         <SectionTitle label="03 — Projects" title="Things I've built." />
+
+        {/* Category filter tabs */}
+        <div style={{ display: "flex", gap: "0.5rem", marginBottom: "2.5rem", flexWrap: "wrap" }}>
+          {CATEGORIES.map((cat) => {
+            const isActive = activeTab === cat;
+            return (
+              <button key={cat} onClick={() => setActiveTab(cat)} style={{ fontFamily: "var(--mono)", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", padding: "0.45rem 1.1rem", borderRadius: 4, border: isActive ? "1px solid var(--accent)" : "1px solid var(--rule)", background: isActive ? "var(--accent-bg)" : "transparent", color: isActive ? "var(--accent)" : "var(--muted)", transition: "all 0.2s" }}>
+                {cat}
+              </button>
+            );
+          })}
+        </div>
+
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
-          {PROJECTS.map((p, i) => (
+          {filtered.map((p, i) => (
             <Reveal key={p.name} delay={i * 80}>
               <ProjectCard {...p} />
             </Reveal>
           ))}
-          <Reveal delay={PROJECTS.length * 80}>
-            <div style={{ border: "1.5px dashed var(--rule)", borderRadius: 10, padding: "2rem", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: 220, gap: "0.75rem" }}>
-              <div style={{ fontFamily: "var(--mono)", fontSize: "1.5rem", color: "var(--faint)" }}>+</div>
-              <div style={{ fontFamily: "var(--mono)", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--faint)" }}>More building ⏳</div>
-            </div>
-          </Reveal>
+          {activeTab === "All" && (
+            <Reveal delay={filtered.length * 80}>
+              <div style={{ border: "1.5px dashed var(--rule)", borderRadius: 10, padding: "2rem", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: 220, gap: "0.75rem" }}>
+                <div style={{ fontFamily: "var(--mono)", fontSize: "1.5rem", color: "var(--faint)" }}>+</div>
+                <div style={{ fontFamily: "var(--mono)", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--faint)" }}>More building ⏳</div>
+              </div>
+            </Reveal>
+          )}
         </div>
       </div>
     </section>

@@ -52,16 +52,21 @@ export const RESEARCH = [
       "Achieved AUC = 0.83 and C-index = 0.74 for glioblastoma survival prediction, outperforming all baselines — with direct implications for personalised treatment planning in oncology.",
     ],
     tags: ["GCN", "Multi-omics", "PyTorch", "Survival Analysis", "Healthcare AI"],
+    link: "https://github.com/dhinesh04/gbm-survival-prediction"
   },
 ];
 
+// status: "completed" | "in-progress"
+// category: "Full-Stack" | "AI/ML"
 export const PROJECTS = [
   {
     name: "Portfolio Website",
     period: "Mar 2026",
-    desc: "Designed a Portfolio website using React",
-    tags: ["React"],
+    desc: "Designed and built a personal portfolio website using React, featuring scroll-reveal animations, a contact form with EmailJS, and automated GitHub Pages deployment.",
+    tags: ["React", "EmailJS", "GitHub Actions"],
     link: "https://github.com/dhinesh04/portfolio",
+    status: "completed",
+    category: "Full-Stack",
   },
   {
     name: "OSU Accessible Parking Tracker",
@@ -69,6 +74,8 @@ export const PROJECTS = [
     desc: "Full-stack accessible-parking tracker built under a 24-hour hackathon sprint. React + Google Maps UI with live backend polling every 10 seconds. FastAPI + Supabase backend with an OpenCV/OCR pipeline to detect parking indicators from images.",
     tags: ["React", "FastAPI", "Supabase", "OpenCV", "Google Maps API"],
     link: "https://github.com/dhinesh04/accessiblity-parking-availability",
+    status: "completed",
+    category: "Full-Stack",
   },
   {
     name: "Early Detection of Depression via Reddit Posts",
@@ -76,8 +83,9 @@ export const PROJECTS = [
     desc: "Linguistic feature analysis for eRisk 2025 Task 2 using TF-IDF & log-odds ratios. Benchmarked BERT, DeBERTa, PubMedBERT, and Longformer — Longformer achieved ~95.08% recall for depressed users.",
     tags: ["PyTorch", "Transformers", "NLP", "Longformer", "eRisk 2025"],
     link: "https://github.com/dhinesh04/early-depression-detection",
+    status: "completed",
+    category: "AI/ML",
   },
-  
   // Add more projects here:
   // {
   //   name: "Your Project",
@@ -85,6 +93,8 @@ export const PROJECTS = [
   //   desc: "Description.",
   //   tags: ["Tag1", "Tag2"],
   //   link: "#",
+  //   status: "completed",     // or "in-progress"
+  //   category: "Full-Stack",  // or "AI/ML"
   // },
 ];
 
