@@ -4,18 +4,29 @@ export const EDUCATION = [
   {
     school: "The Ohio State University",
     degree: "M.S. Computer Science & Engineering",
-    period: "Aug 2024 – May 2026",
-    gpa: "3.62 / 4.0",
+    period: "Aug 2024 – Aug 2026",
+    gpa: "3.55 / 4.0",
   },
   {
     school: "Coimbatore Institute of Technology",
     degree: "M.Sc. Decision & Computing Sciences (5-yr)",
     period: "Jul 2019 – May 2024",
-    gpa: "3.55 / 4.0",
+    gpa: "8.87/ 10",
   },
 ];
 
 export const EXPERIENCE = [
+  {
+    company: "Fulcrum Digital",
+    location: "New York, NY (Remote)",
+    role: "AI Engineer — Summer Intern",
+    period: "May 2026 – Aug 2026",
+    bullets: [
+      "Built an internal workflow management app using PowerApps and Microsoft Copilot to streamline employee onboarding and offboarding, reducing manual updates and context-switching across multiple apps.",
+      "Integrated Power Automate and SharePoint Lists to automate task routing and status tracking, creating an unified interface for cross-functional HR and IT workflows.",
+    ],
+    tags: ["AI Agents", "PowerApps", "Microsoft Copilot", "PowerAutomate", "SharePoint Lists", "Workflow Management"],
+  },
   {
     company: "EverWorker",
     location: "Greenwich, CT (Remote)",
@@ -46,12 +57,12 @@ export const RESEARCH = [
     org: "The Ohio State University",
     dept: "Dept. of Computer Science & Engineering",
     role: "M.S. Project Researcher",
-    period: "Feb 2025 – Present",
+    period: "Feb 2025 – July 2026",
     bullets: [
-      "Developing a dual-head Graph Convolutional Network integrating four multi-omics modalities (CNA, mRNA, DNA methylation, clinical) via mRMR feature selection and survival-aware Similarity Network Fusion.",
-      "Achieved AUC = 0.83 and C-index = 0.74 for glioblastoma survival prediction, outperforming all baselines — with direct implications for personalised treatment planning in oncology.",
+      "Developed a dual-head Graph Convolutional Network integrating four multi-omics modalities (CNA, mRNA, DNA methylation, clinical) via mRMR feature selection and Similarity Network Fusion for glioblastoma brain tumor survival prediction",
+      "Achieved a C-index of 0.71 and Brier Score of 0.11, outperforming survival baselines (Random Survival Forest, DeepSurv, DeepHit) with statistically significant risk stratification (p < 0.0001).",
     ],
-    tags: ["GCN", "Multi-omics", "PyTorch", "Survival Analysis", "Healthcare AI"],
+    tags: ["Graph Convolutional Networks","Deep Learning", "Multi-omics", "PyTorch", "Survival Analysis", "Healthcare AI"],
     link: "https://github.com/dhinesh04/gbm-survival-prediction"
   },
 ];
