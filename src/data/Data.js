@@ -125,7 +125,7 @@ export const CONTACT_LINKS = [
 ];
 
 export const QUICK_LINKS = [
-  { label: "Download Resume", href: "https://drive.google.com/file/d/19rkXeZvQUAqvDaPhMqi7cLLv6nb2n-cv/view?usp=sharing" },
+  { label: "Download Resume", href: "https://drive.google.com/file/d/1wtGICYMzTi4b0uMLAQQrHnYVhxSdfDXQ/view?usp=sharing" },
   { label: "GitHub Profile",  href: "https://github.com/dhinesh04" },
   { label: "LinkedIn",        href: "https://linkedin.com/in/dhinesh-sivakumar" },
   { label: "Medium Blog",     href: "https://medium.com/@dhinesh_sivakumar" },
