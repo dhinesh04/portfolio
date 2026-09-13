@@ -72,7 +72,7 @@ export const RESEARCH = [
 export const PROJECTS = [
   {
     name: "Portfolio Website",
-    period: "Mar 2026",
+    period: "",
     desc: "Designed and built a personal portfolio website using React, featuring scroll-reveal animations, a contact form with EmailJS, and automated GitHub Pages deployment.",
     tags: ["React", "EmailJS", "GitHub Actions"],
     link: "https://github.com/dhinesh04/portfolio",
@@ -81,7 +81,7 @@ export const PROJECTS = [
   },
   {
     name: "OSU Accessible Parking Tracker",
-    period: "Oct 2025",
+    period: "",
     desc: "Full-stack accessible-parking tracker built under a 24-hour hackathon sprint. React + Google Maps UI with live backend polling every 10 seconds. FastAPI + Supabase backend with an OpenCV/OCR pipeline to detect parking indicators from images.",
     tags: ["React", "FastAPI", "Supabase", "OpenCV", "Google Maps API"],
     link: "https://github.com/dhinesh04/accessiblity-parking-availability",
@@ -90,13 +90,22 @@ export const PROJECTS = [
   },
   {
     name: "Early Detection of Depression via Reddit Posts",
-    period: "Apr 2025",
+    period: "",
     desc: "Linguistic feature analysis for eRisk 2025 Task 2 using TF-IDF & log-odds ratios. Benchmarked BERT, DeBERTa, PubMedBERT, and Longformer — Longformer achieved ~95.08% recall for depressed users.",
     tags: ["PyTorch", "Transformers", "NLP", "Longformer", "eRisk 2025"],
     link: "https://github.com/dhinesh04/early-depression-detection",
     status: "completed",
     category: "AI/ML",
   },
+  {
+    name: "Real-Time Collaborative Whiteboard",
+    period: "",
+    desc: " Built a full-stack real-time collaborative whiteboard (.NET 8, ASP.NET Core, SignalR, React, PostgreSQL) where multiple users edit shared boards simultaneously with live cursors. Containerized the API with Docker.",
+    tags: ["Concurrency", "C#", ".NET", "React", "Full-stack"],
+    link: "https://github.com/dhinesh04/collab-whiteboard",
+    status: "In Progress",
+    category: "Full-Stack",
+  }
   // Add more projects here:
   // {
   //   name: "Your Project",
@@ -110,18 +119,19 @@ export const PROJECTS = [
 ];
 
 export const SKILLS = [
-  { group: "Languages",        items: ["Python", "C++", "JavaScript", "Go", "SQL", "Bash"] },
-  { group: "Web & Frameworks", items: ["React", "TypeScript", "FastAPI", "Node.js", "Flask", "Django"] },
+  { group: "Languages",        items: ["Python", "C++","C#", "JavaScript", "Go"] },
+  { group: "Web & Frameworks", items: ["React", "TypeScript", "FastAPI", "Flask", "Django", "Node.js", ".NET"] },
   { group: "ML / AI",          items: ["PyTorch", "Transformers", "scikit-learn", "NumPy", "Pandas", "OpenCV"] },
   { group: "Databases",        items: ["PostgreSQL", "MongoDB", "MySQL", "Supabase", "ArangoDB"] },
-  { group: "DevOps & Cloud",   items: ["Docker", "Kubernetes", "GCP", "AWS", "Git", "GitHub Actions"] },
+  { group: "DevOps & Cloud",   items: ["Docker", "Kubernetes", "GCP", "AWS", "Git"] },
+  { group: "Tools",            items: ["Bash", "Jupyter", "VS Code", "PowerApps", "Power Automate", "Tableau", "PowerBI"] },
 ];
 
 export const CONTACT_LINKS = [
   { label: "Email",    value: "dhineshkumar4645@gmail.com",        href: "mailto:dhineshkumar4645@gmail.com" },
   { label: "LinkedIn", value: "linkedin.com/in/dhinesh-sivakumar", href: "https://linkedin.com/in/dhinesh-sivakumar" },
   { label: "Medium",   value: "medium.com/@dhinesh_sivakumar",     href: "https://medium.com/@dhinesh_sivakumar" },
-  { label: "Location", value: "Columbus, OH",                      href: null },
+  { label: "Location", value: "Chicago, IL",                      href: null },
 ];
 
 export const QUICK_LINKS = [
