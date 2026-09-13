@@ -1,5 +1,12 @@
+import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 import { NAV_ITEMS } from "../data/Data";
 import { useScrolled } from "../hooks/usePortfolio";
+
+const SOCIALS = [
+  { label: "GitHub",   href: "https://github.com/dhinesh04",                 Icon: FaGithub },
+  { label: "LinkedIn", href: "https://linkedin.com/in/dhinesh-sivakumar",    Icon: FaLinkedin },
+  { label: "Medium",   href: "https://medium.com/@dhinesh_sivakumar",        Icon: FaMedium },
+];
 
 /**
  * Sticky top navigation bar.
@@ -44,7 +51,7 @@ export default function Header({ active }) {
             letterSpacing: "-0.02em",
           }}
         >
-          Dhinesh<span style={{ color: "var(--accent)" }}>.</span>
+          Dhinesh S<span style={{ color: "var(--accent)" }}>.</span>
         </a>
 
         {/* Nav links */}
@@ -73,6 +80,34 @@ export default function Header({ active }) {
               </a>
             );
           })}
+
+          {/* Divider */}
+          <span style={{ width: 1, height: 16, background: "var(--rule)" }} />
+
+          {/* Social icons */}
+          <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+            {SOCIALS.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                title={label}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  fontSize: "1.15rem",
+                  color: "var(--muted)",
+                  transition: "color 0.2s, transform 0.2s",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "var(--accent)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "var(--muted)"; e.currentTarget.style.transform = "translateY(0)"; }}
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </nav>

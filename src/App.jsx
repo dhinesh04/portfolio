@@ -1,6 +1,7 @@
 import { useActiveSection } from "./hooks/usePortfolio";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ParticleField from "./components/ParticleField";
 import Home from "./pages/Home";
 import "./styles/portfolio.css";
 
@@ -11,6 +12,7 @@ export default function App() {
 
   return (
     <>
+      <ParticleField />
       <Header active={active} />
       <Home />
       <Footer />

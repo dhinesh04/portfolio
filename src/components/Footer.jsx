@@ -6,7 +6,7 @@ export default function Footer() {
       style={{
         borderTop: "1px solid var(--rule)",
         padding: "1.75rem var(--pad)",
-        background: "var(--surface)",
+        background: "var(--surface-veil)",
       }}
     >
       <div

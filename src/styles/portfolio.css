@@ -15,6 +15,11 @@
   --accent:    #0D9488;
   --accent-bg: #F0FDFA;
   --rule:      rgba(13, 148, 136, 0.13);
+  /* translucent versions of the two ground tones, so the ambient particle
+     field shows only faintly through the content sections while the hero
+     (which stays fully transparent) keeps the field at full strength */
+  --surface-veil: rgba(255, 255, 255, 0.78);
+  --bg-veil:      rgba(247, 249, 249, 0.74);
   --serif:     'Playfair Display', Georgia, serif;
   --sans:      'DM Sans', system-ui, sans-serif;
   --mono:      'DM Mono', monospace;
@@ -24,13 +29,16 @@
 
 html {
   scroll-behavior: smooth;
+  /* Root size for the whole page. Almost every size is in rem, so raising this
+     scales the type in every section proportionally (was the 16px default). */
+  font-size: 112.5%;
 }
 
 body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 0.94rem;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }

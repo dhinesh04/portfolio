@@ -125,7 +125,7 @@ function Profile() {
           {/* ── Text ── */}
           <div style={{ flex: 1, minWidth: 280, maxWidth: 620 }}>
             <div style={{ fontFamily: "var(--mono)", fontSize: "0.72rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "1.2rem", ...anim("0.15s") }}>
-              M.S. CSE · The Ohio State University · Graduating Aug 2026
+              M.S. Computer Science and Engineering · The Ohio State University
             </div>
 
             <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(2.4rem, 6vw, 4.8rem)", fontWeight: 500, lineHeight: 1.08, letterSpacing: "-0.03em", color: "var(--ink)", marginBottom: "1.5rem", ...anim("0.25s") }}>
@@ -133,9 +133,9 @@ function Profile() {
             </h1>
 
             <p style={{ fontSize: "1.08rem", color: "var(--muted)", lineHeight: 1.85, maxWidth: 560, marginBottom: "2.5rem", ...anim("0.4s") }}>
-              Software engineer with professional internship experiences in AI automation and large-scale data systems.
-              Passionate about the healthcare sector — applying machine learning to real clinical problems.
-              Graduating from OSU in August 2026 and actively seeking full-time opportunities.
+              Software engineer with professional internship experiences in Software Engineering and AI automation working in large-scale data systems.
+              Passionate about the healthcare sector — applying AI to real clinical problems.
+              Graduated from The Ohio State in August 2026 and actively seeking full-time opportunities.
             </p>
 
             {/* Education cards — now using EducationCard component */}
@@ -178,7 +178,7 @@ function Profile() {
 
           {/* ── Photo ── */}
           <div style={{ ...anim("0.1s"), flexShrink: 0 }}>
-            <div style={{ width: 260, height: 260, borderRadius: "50%", overflow: "hidden", border: "3px solid var(--accent-bg)", outline: "2px solid var(--rule)" }}>
+            <div style={{ width: 360, maxWidth: "100%", aspectRatio: "1 / 1", borderRadius: 16, overflow: "hidden", border: "3px solid var(--accent-bg)", outline: "2px solid var(--rule)" }}>
               <img src={profilePhoto} alt="Dhinesh Kumar Sivakumar" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
             </div>
           </div>
@@ -192,7 +192,7 @@ function Profile() {
 // ── Experience ────────────────────────────────────────────────────────────────
 function Experience() {
   return (
-    <section id="experience" style={{ padding: "6rem 0", borderBottom: "1px solid var(--rule)", background: "var(--surface)" }}>
+    <section id="experience" style={{ padding: "6rem 0", borderBottom: "1px solid var(--rule)", background: "var(--surface-veil)" }}>
       <div className="section-inner">
         <SectionTitle label="01 — Professional Experience" title="Where I've worked." />
         <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
@@ -210,9 +210,9 @@ function Experience() {
 // ── Research ──────────────────────────────────────────────────────────────────
 function Research() {
   return (
-    <section id="research" style={{ padding: "6rem 0", borderBottom: "1px solid var(--rule)" }}>
+    <section id="research" style={{ padding: "6rem 0", borderBottom: "1px solid var(--rule)", background: "var(--bg-veil)" }}>
       <div className="section-inner">
-        <SectionTitle label="02 — Research Experience" title="What I'm studying and researching." />
+        <SectionTitle label="02 — Research Experience" title="What did I research?" />
         <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
           {RESEARCH.map((r, i) => (
             <Reveal key={r.org} delay={i * 100}>
@@ -233,7 +233,7 @@ function Projects() {
   const filtered = activeTab === "All" ? PROJECTS : PROJECTS.filter(p => p.category === activeTab);
 
   return (
-    <section id="projects" style={{ padding: "6rem 0", borderBottom: "1px solid var(--rule)", background: "var(--surface)" }}>
+    <section id="projects" style={{ padding: "6rem 0", borderBottom: "1px solid var(--rule)", background: "var(--surface-veil)" }}>
       <div className="section-inner">
         <SectionTitle label="03 — Projects" title="Things I've built." />
 
@@ -272,7 +272,7 @@ function Projects() {
 // ── Skills ────────────────────────────────────────────────────────────────────
 function Skills() {
   return (
-    <section id="skills" style={{ padding: "6rem 0", borderBottom: "1px solid var(--rule)" }}>
+    <section id="skills" style={{ padding: "6rem 0", borderBottom: "1px solid var(--rule)", background: "var(--bg-veil)" }}>
       <div className="section-inner">
         <SectionTitle label="04 — Skills" title="Tools of the trade." />
         <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
@@ -353,15 +353,15 @@ function ContactForm() {
 // ── Contact ───────────────────────────────────────────────────────────────────
 function Contact() {
   return (
-    <section id="contact" style={{ padding: "6rem 0" }}>
+    <section id="contact" style={{ padding: "6rem 0", background: "var(--bg-veil)" }}>
       <div className="section-inner">
         <SectionTitle label="05 — Contact" title="Let's talk." />
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
           <Reveal>
             <p style={{ fontSize: "1.05rem", color: "var(--muted)", lineHeight: 1.85, marginBottom: "2rem" }}>
-              Graduating in August 2026 and actively looking for full-time software engineering roles —
+              Graduated in August 2026 and actively looking for full-time software engineering roles —
               especially in healthcare technology, AI/ML, or full-stack product engineering.
-              Open to research collaborations too.
+              Open to research collaborations as well.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               {CONTACT_LINKS.map(({ label, value, href }) => (
