@@ -105,6 +105,15 @@ export const PROJECTS = [
     link: "https://github.com/dhinesh04/collab-whiteboard",
     status: "In Progress",
     category: "Full-Stack",
+  },
+  {
+    name: "Biomedical Literature Assistant",
+    period: "",
+    desc: "Built a RAG question-answering system over 16K PubMed glioblastoma abstracts with a FastAPI + React app, PostgreSQL + Chroma storage, and automated citation verification that flags fabricated quotes; benchmarked embedding models and selected MedEmbed (MRR 0.92, Recall@5 1.00).",
+    tags: ["RAG", "HuggingFace", "ChromaDB", "Postgres", "Fast-API"],
+    link: "https://github.com/dhinesh04/collab-whiteboard",
+    status: "completed",
+    category: "AI/ML",
   }
   // Add more projects here:
   // {
